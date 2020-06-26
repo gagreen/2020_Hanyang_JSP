@@ -1,0 +1,5 @@
+CREATE TABLE student(
+    studno NUMBER(5) PRIMARY KEY,
+    name VARCHAR(12) NOT NULL,
+    dept VARCHAR(21) NOT NULL
+)

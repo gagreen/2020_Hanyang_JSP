@@ -1,0 +1,29 @@
+CREATE TABLE member_table(
+	db_member_memberid 	VARCHAR2(10), 
+	db_member_password 	NUMBER(4) 	NOT NULL,
+	db_member_name 		VARCHAR2(20) 	NOT NULL,
+	db_member_gender 	VARCHAR(3) 	NOT NULL,
+	db_member_religion 	VARCHAR(9) 	NOT NULL,
+	db_member_joinday 	DATE 		NOT NULL,
+	db_member_address 	VARCHAR2(120) 	NOT NULL,
+	db_member_filename 	VARCHAR2(80) 	NOT NULL,
+	CONSTRAINT pk_member PRIMARY KEY (db_member_memberid)
+);
+
+CREATE TABLE tastehistory_table(
+	db_tastehistory_memberid 	VARCHAR2(10) 	NOT NULL,
+	db_tastehistory_tastecode 	NUMBER(2) 	NOT NULL,
+	CONSTRAINT pk_tastehistory PRIMARY KEY (db_tastehistory_memberid, db_tastehistory_tastecode)
+);
+
+CREATE TABLE tastecode_table(
+	db_tastecode_code 	NUMBER(2) 	NOT NULL,
+	db_tastecode_name 	VARCHAR2(18) 	NOT NULL,
+	CONSTRAINT pk_tastecode PRIMARY KEY (db_tastecode_code)
+);
+
+
+INSERT INTO tastecode_table VALUES (1, '축구');
+INSERT INTO tastecode_table VALUES (2, '수영');
+INSERT INTO tastecode_table VALUES (3, '영화');
+INSERT INTO tastecode_table VALUES (4, '독서');

@@ -1,0 +1,41 @@
+CREATE TABLE db_goodssale_table (
+	db_goodssale_date 	DATE 		NOT NULL,
+	db_goodssale_seqno 	NUMBER(5) 	NOT NULL,
+	db_goodssale_saleyn 	CHAR(1) 		NOT NULL,
+	db_goodssale_branchcode 	CHAR(4) 		NOT NULL,
+	db_goodssale_productcode 	CHAR(4) 		NOT NULL,
+	db_goodssale_amount 	NUMBER(5) 	NOT NULL,
+	db_goodssale_cost 	NUMBER(10) 	NOT NULL, 
+	db_goodssale_settlement 	CHAR(4) 		NOT NULL, 
+	db_goodssale_customer 	VARCHAR2(30) 	NOT NULL, 
+	CONSTRAINT pk_goodssale PRIMARY KEY(db_goodssale_date, db_goodssale_seqno)
+);
+
+CREATE TABLE db_goodsstock_table(
+	db_goodsstock_branchcode 		CHAR(4)  	NOT NULL,
+	db_goodsstock_productcode 	CHAR(4) 		NOT NULL,
+	db_goodsstock_stockcost 		NUMBER(10) 	NOT NULL,
+	db_goodsstock_productionconst 	NUMBER(10) 	NOT NULL,
+	CONSTRAINT pk_goodsstock PRIMARY KEY(db_goodsstock_branchcode, db_goodsstock_productcode)
+);
+
+CREATE TABLE db_branchcode_table(
+	db_branchcode_code 	CHAR(4) 		NOT NULL,
+	db_branchcode_name 	VARCHAR2(30) 	NOT NULL,
+	CONSTRAINT pk_branchcode PRIMARY KEY(db_branchcode_code)
+);
+
+CREATE TABLE db_productcode_table(
+	db_productcode_code 	CHAR(4) 		NOT NULL,
+	db_productcode_name 	VARCHAR2(30) 	NOT NULL,
+	CONSTRAINT pk_productcode PRIMARY KEY(db_productcode_code)
+);
+
+INSERT INTO db_productcode_table VALUES ('001', '막걸리');
+INSERT INTO db_productcode_table VALUES ('002', '사이다');
+INSERT INTO db_productcode_table VALUES ('003', '콜라');
+
+INSERT INTO db_branchcode_table VALUES ('001', '하아');
+INSERT INTO db_branchcode_table VALUES ('002', '엄청');
+INSERT INTO db_branchcode_table VALUES ('003', 'ㅋㅋ');
+

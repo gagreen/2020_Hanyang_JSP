@@ -1,0 +1,56 @@
+CREATE TABLE professor(
+	profno 	NUMBER(4) 	NOT NULL,
+	name 	VARCHAR2(10) 	NOT NULL,
+	id 	VARCHAR2(15),
+	position 	VARCHAR2(20),
+	pay 	NUMBER(3),
+	hiredate 	DATE,
+	bonus 	NUMBER(4),
+	deptno 	NUMBER(3),
+	CONSTRAINT pk_professor PRIMARY KEY (profno)
+);
+
+CREATE TABLE department(
+	deptno 	NUMBER(3) 	NOT NULL,
+	dname 	VARCHAR2(30),
+	part 	NUMBER(3),
+	build 	VARCHAR2(20),
+	CONSTRAINT pk_department PRIMARY KEY (deptno)
+);
+
+CREATE SEQUENCE prof_seq 
+	INCREMENT BY 1
+	START WITH 1100
+	NOMINVALUE
+	NOMAXVALUE
+	NOCYCLE;
+
+INSERT INTO professor VALUES (1001, '조인형', 'captain', '정교수', 550, TO_DATE('800623'), 100, 101);
+INSERT INTO professor VALUES (1002, '박승곤', 'sweety', '조교수', 380, TO_DATE('870130'), 60, 101);
+INSERT INTO professor VALUES (1003, '송도권', 'powerman', '전임강사', 270, TO_DATE('980322'), NULL, 101);
+INSERT INTO professor VALUES (2001, '양선희', 'lamb1', '전임강사', 250, TO_DATE('010901'), NULL, 102);
+INSERT INTO professor VALUES (2002, '김영조', 'number1', '조교수', 350, TO_DATE('851130'), 80, 102);
+INSERT INTO professor VALUES (2003, '주승재', 'bluedragon', '정교수', 490, TO_DATE('820429'), 90, 102);
+INSERT INTO professor VALUES (3001, '김도형', 'angel1004', '정교수', 530, TO_DATE('811023'), 110, 103);
+INSERT INTO professor VALUES (3002, '나한열', 'naone10', '조교수', 330, TO_DATE('970701'), 50, 103);
+INSERT INTO professor VALUES (3003, '김현정', 'only-u', '전임강사', 290, TO_DATE('020224'), NULL, 103);
+INSERT INTO professor VALUES (4001, '심슨', 'simson', '정교수', 570, TO_DATE('811023'), 130, 201);
+INSERT INTO professor VALUES (4002, '최슬기', 'gogogo', '조교수', 330, TO_DATE('090830'), NULL, 201);
+INSERT INTO professor VALUES (4003, '박원범', 'mypride', '조교수', 310, TO_DATE('991201'), 50, 202);
+INSERT INTO professor VALUES (4004, '차범철', 'ironman', '전임강사', 260, TO_DATE('090128'), NULL, 202);
+INSERT INTO professor VALUES (4005, '바비', 'standkang', '정교수', 500, TO_DATE('850918'), 80, 203);
+INSERT INTO professor VALUES (4006, '전민', 'napeople', '전임강사', 220, TO_DATE('100628'), NULL, 301);
+INSERT INTO professor VALUES (4007, '허은', 'silver-her', '조교수', 290, TO_DATE('010523'), 30, 301);
+
+INSERT INTO department VALUES(101, '컴퓨터공학과', 100, '정보관');
+INSERT INTO department VALUES(102, '멀티미디어공학과', 100, '멀티미디어관');
+INSERT INTO department VALUES(103, '소프트웨어공학과', 100, '소프트웨어관');
+INSERT INTO department VALUES(201, '전자공학과', 200, '전자제어관');
+INSERT INTO department VALUES(202, '기계공학과', 200, '기계실험관');
+INSERT INTO department VALUES(203, '화학공학과', 200, '화학실습관');
+INSERT INTO department VALUES(301, '문헌정보학과', 300, '인문관');
+INSERT INTO department VALUES(100, '컴퓨터정보학부', 10, NULL);
+INSERT INTO department VALUES(200, '메카트로닉스학부', 10, NULL);
+INSERT INTO department VALUES(300, '인문사회학부', 20, NULL);
+INSERT INTO department VALUES(10, '공과대학', NULL, NULL);
+INSERT INTO department VALUES(20, '인문대학', NULL, NULL);
