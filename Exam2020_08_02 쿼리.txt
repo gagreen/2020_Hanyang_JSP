@@ -1,0 +1,13 @@
+CREATE TABLE db_memberid_table(
+	db_member_id 		VARCHAR2(10) 	NOT NULL PRIMARY KEY,
+	db_member_password 	NUMBER(4) 	NOT NULL,
+	db_member_name 		VARCHAR2(20) 	NOT NULL
+);
+
+INSERT INTO db_memberid_table VALUES ('aaaaa', 1111, 'È«±æµ¿');
+INSERT INTO db_memberid_table VALUES ('bbbbb', 2222, '±è±æµ¿');
+INSERT INTO db_memberid_table VALUES ('ccccc', 3333, '±è±æ¼ø');
+INSERT INTO db_memberid_table VALUES ('ddddd', 4444, 'È«±â¿µ');
+INSERT INTO db_memberid_table VALUES ('eeeee', 5555, 'Àå±æ»ê');
+
+COMMIT;

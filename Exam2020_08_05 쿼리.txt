@@ -1,0 +1,49 @@
+CREATE TABLE tbl_artist_01(
+	artistid 	VARCHAR2(4) 	NOT NULL PRIMARY KEY,
+	artistNm 	VARCHAR2(20),
+	birth 	CHAR(8),
+	gender 	CHAR(1),
+	specialty 	NUMBER(1),
+	office 	VARCHAR2(30)
+);
+
+INSERT INTO tbl_artist_01 VALUES ('A001', '김스타', '19980101', 'M', 1, 'A엔터테이먼트');
+INSERT INTO tbl_artist_01 VALUES ('A002', '정스타', '19990201', 'F', 2, 'B엔터테이먼트');
+INSERT INTO tbl_artist_01 VALUES ('A003', '왕스타', '19980301', 'M', 3, 'C엔터테이먼트');
+INSERT INTO tbl_artist_01 VALUES ('A004', '박스타', '20100401', 'F', 1, 'D엔터테이먼트');
+INSERT INTO tbl_artist_01 VALUES ('A005', '이스타', '20100501', 'M', 2, 'E엔터테이먼트');
+
+
+CREATE TABLE tbl_mentor_01(
+	mentorId 		VARCHAR2(4) NOT NULL PRIMARY KEY,
+	mentorNm 	VARCHAR2(20)
+);
+
+INSERT INTO tbl_mentor_01 VALUES ('J001', '한멘토');
+INSERT INTO tbl_mentor_01 VALUES ('J002', '정멘토');
+INSERT INTO tbl_mentor_01 VALUES ('J003', '김멘토');
+
+CREATE TABLE tbl_score_01(
+	scoreNo 		NUMBER(6) 	NOT NULL PRIMARY KEY,
+	artistId 		VARCHAR(4) 	NOT NULL,
+	mentorId 		VARCHAR(4) 	NOT NULL,
+	score 		VARCHAR(3)
+);
+
+INSERT INTO tbl_score_01 VALUES (110001, 'A001', 'J001', 80);
+INSERT INTO tbl_score_01 VALUES (110002, 'A001', 'J002', 90);
+INSERT INTO tbl_score_01 VALUES (110003, 'A001', 'J003', 70);
+INSERT INTO tbl_score_01 VALUES (110004, 'A002', 'J001', 60);
+INSERT INTO tbl_score_01 VALUES (110005, 'A002', 'J002', 50);
+INSERT INTO tbl_score_01 VALUES (110006, 'A002', 'J003', 70);
+INSERT INTO tbl_score_01 VALUES (110007, 'A003', 'J001', 80);
+INSERT INTO tbl_score_01 VALUES (110008, 'A003', 'J002', 60);
+INSERT INTO tbl_score_01 VALUES (110009, 'A003', 'J003', 70);
+INSERT INTO tbl_score_01 VALUES (110010, 'A004', 'J001', 80);
+INSERT INTO tbl_score_01 VALUES (110011, 'A004', 'J002', 78);
+INSERT INTO tbl_score_01 VALUES (110012, 'A004', 'J003', 89);
+INSERT INTO tbl_score_01 VALUES (110013, 'A005', 'J001', 62);
+INSERT INTO tbl_score_01 VALUES (110014, 'A005', 'J002', 91);
+INSERT INTO tbl_score_01 VALUES (110015, 'A005', 'J003', 67);
+
+COMMIT;

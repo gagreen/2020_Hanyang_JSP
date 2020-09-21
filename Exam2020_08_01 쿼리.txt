@@ -1,0 +1,18 @@
+CREATE TABLE db_emp_table (
+	db_emp_empno 	CHAR(4) 		NOT NULL PRIMARY KEY,
+	db_emp_empname 	VARCHAR2(20) 	NOT NULL,
+	db_emp_depname 	VARCHAR2(20) 	NOT NULL,
+	db_emp_hiredate 	CHAR(8) 		NOT NULL,
+	db_emp_positionname VARCHAR2(20) 	NOT NULL
+);
+
+INSERT INTO db_emp_table VALUES ('1001', '김행복', '인사팀', '00140101', '대리');
+INSERT INTO db_emp_table VALUES ('1002', '이축복', '총무팀', '00120304', '사원');
+INSERT INTO db_emp_table VALUES ('1003', '장믿음', '총무팀', '00040101', '사원');
+INSERT INTO db_emp_table VALUES ('1004', '최사랑', '전산팀', '00050506', '과장');
+INSERT INTO db_emp_table VALUES ('1005', '진평화', '전산팀', '00060405', '과장');
+INSERT INTO db_emp_table VALUES ('1006', '차우정', '인사팀', '00120823', '사원');
+INSERT INTO db_emp_table VALUES ('1007', '조성공', '전산팀', '00040227', '팀장');
+INSERT INTO db_emp_table VALUES ('1008', '임희망', '전산팀', '00100414', '사원');
+
+COMMIT;

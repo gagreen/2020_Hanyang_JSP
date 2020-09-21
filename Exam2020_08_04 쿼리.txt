@@ -1,0 +1,32 @@
+CREATE TABLE professor_table(
+	profno 	NUMBER(4) 	NOT NULL PRIMARY KEY,
+	name 	VARCHAR2(10) 	NOT NULL,
+	id 	VARCHAR2(15),
+	position 	VARCHAR2(20),
+	pay 	NUMBER(3),
+	hiredate 	DATE,
+	bonus 	NUMBER(4),
+	deptno 	NUMBER(3)
+);
+
+CREATE TABLE department_table(
+	deptno 	NUMBER(3) 	NOT NULL PRIMARY KEY,
+	dname 	VARCHAR2(30),
+	part 	NUMBER(3),
+	build 	VARCHAR2(20)
+);
+
+INSERT INTO department_table VALUES (101, '컴퓨터공학과', 100, '정보관');
+INSERT INTO department_table VALUES (102, '멀티미디어공학과', 100, '멀티미디어관');
+INSERT INTO department_table VALUES (103, '소프트웨어공학과', 100, '소프트웨어관');
+INSERT INTO department_table VALUES (201, '전자공학과', 200, '전자제어관');
+INSERT INTO department_table VALUES (202, '기계공학과', 200, '기계실험관');
+INSERT INTO department_table VALUES (203, '화학공학과', 200, '화학실습관');
+INSERT INTO department_table VALUES (301, '문헌정보학과', 300, '인문관');
+INSERT INTO department_table VALUES (100, '컴퓨터정보학부', 10, NULL);
+INSERT INTO department_table VALUES (200, '메카트로닉스학부', 10, NULL);
+INSERT INTO department_table VALUES (300, '인문사회학부', 20, NULL);
+INSERT INTO department_table VALUES (10, '공과대학', NULL, NULL);
+INSERT INTO department_table VALUES (20, '인문대학', NULL, NULL);
+
+COMMIT;
